@@ -30,20 +30,51 @@
 //	}
 //	return 0;
 //}
+//#include<stdio.h>
+//#define n 5
+//int main()
+//{
+//	int list[n][n];
+//	//int row, col;
+//	int i, j;
+//	for (i = 0; i < n; i++);
+//	{
+//		for (j = 0; j < n; j++)
+//		{
+//			scanf_s("%d", &list[i][j]);
+//			printf("%d\n", list[i][j]);
+//		}
+//	}
+//	return 0;
+//}
 #include<stdio.h>
-#define n 5
+#include<stdbool.h>
+#include<stdlib.h>
+#include<time.h>
+#define ROW 4
+#define COL 13
+
 int main()
 {
-	int list[n][n];
-	//int row, col;
-	int i, j;
-	for (i = 0; i < n; i++);
+	bool in_hand[ROW][COL] = { false };
+	int num_cards, rank, suit;
+	const char rank_code[] = { '2','3','4','5','6','7','8','9','t','j','q','k','a' };
+	const char suit_code[] = { 'c','d','h','s' };
+	srand((unsigned)time(NULL));
+	printf("请输入手牌数量：>");
+	scanf_s("%d", &num_cards);
+	printf("\n你的手牌是：>");
+	while (num_cards > 0)
 	{
-		for (j = 0; j < n; j++)
+		suit = rand() % ROW;
+		rank = rand() % COL;
+		if (!in_hand[suit][rank])
 		{
-			scanf_s("%d", &list[i][j]);
-			printf("%d\n", list[i][j]);
+			in_hand[suit][rank] = true;
+			num_cards--;
+			printf(" %c%c", rank_code[rank], suit_code[suit]);
 		}
 	}
+	printf("\n");
 	return 0;
 }
