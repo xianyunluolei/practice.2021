@@ -47,34 +47,48 @@
 //	}
 //	return 0;
 //}
-#include<stdio.h>
-#include<stdbool.h>
-#include<stdlib.h>
-#include<time.h>
-#define ROW 4
-#define COL 13
 
-int main()
+////发牌程序  二维数组的简单运用 以及随机数的设定
+//#include<stdio.h>
+//#include<stdbool.h>
+//#include<stdlib.h>
+//#include<time.h>
+//#define ROW 4
+//#define COL 13
+//
+//int main()
+//{
+//	bool in_hand[ROW][COL] = { false };
+//	int num_cards, rank, suit;
+//	const char rank_code[] = { '2','3','4','5','6','7','8','9','t','j','q','k','a' };
+//	const char suit_code[] = { 'c','d','h','s' };
+//	srand((unsigned)time(NULL));
+//	printf("请输入手牌数量：>");
+//	scanf_s("%d", &num_cards);
+//	printf("\n你的手牌是：>");
+//	while (num_cards > 0)
+//	{
+//		suit = rand() % ROW;
+//		rank = rand() % COL;
+//		if (!in_hand[suit][rank])
+//		{
+//			in_hand[suit][rank] = true;
+//			num_cards--;
+//			printf(" %c%c", rank_code[rank], suit_code[suit]);
+//		}
+//	}
+//	printf("\n");
+//	return 0;
+//}
+#include<stdio.h>
+
+int main(void)
 {
-	bool in_hand[ROW][COL] = { false };
-	int num_cards, rank, suit;
-	const char rank_code[] = { '2','3','4','5','6','7','8','9','t','j','q','k','a' };
-	const char suit_code[] = { 'c','d','h','s' };
-	srand((unsigned)time(NULL));
-	printf("请输入手牌数量：>");
-	scanf_s("%d", &num_cards);
-	printf("\n你的手牌是：>");
-	while (num_cards > 0)
-	{
-		suit = rand() % ROW;
-		rank = rand() % COL;
-		if (!in_hand[suit][rank])
-		{
-			in_hand[suit][rank] = true;
-			num_cards--;
-			printf(" %c%c", rank_code[rank], suit_code[suit]);
-		}
-	}
-	printf("\n");
+	int n;
+	printf("请输入数组长度：>");
+	scanf_s("%d", &n);
+	int arr[n];
+	arr[0] = 1;
+	printf("\n%d\n", arr[0]);
 	return 0;
 }
