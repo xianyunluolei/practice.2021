@@ -79,16 +79,19 @@
 //	return 0;
 //}
 //创建结构体的有关复习
-#include<stdio.h>
-struct com
-{
-	char brand[20];
-	char type[20];
-	int price;
-};
-int main()
-{
-	struct com a = {"ASUS","Vivobook 14pro",5200};
-	printf("品牌:%s\n型号:%s\n价格:%d\n",a.brand,a.type,a.price);
-	return 0;
-}
+//#include<stdio.h>
+//struct com
+//{
+//	char brand[20];
+//	char type[20];
+//	int price;
+//};
+//int main()
+//{
+//	struct com a = {"ASUS","Vivobook 14pro",5200};
+//	printf("品牌:%s\n型号:%s\n价格:%d\n",a.brand,a.type,a.price);
+//	struct com* A=&a;
+//	printf("品牌：%s\n", (*A).brand);
+//	printf("品牌：%s\n", A->brand);
+//	return 0;
+//}
