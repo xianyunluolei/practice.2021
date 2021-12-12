@@ -17,7 +17,7 @@
 //{
 //	char arr[10] = "abucdefg";
 //	int len = readline_str(arr, 10);
-//	printf("×Ö·û´®arrµÄ³¤¶ÈÎª£»length = %d\n", len);
+//	printf("å­—ç¬¦ä¸²arrçš„é•¿åº¦ä¸ºï¼›length = %d\n", len);
 //	return 0;
 #include<stdio.h>
 
@@ -40,32 +40,32 @@ int div(int x, int y)
 void mune()
 {
 	printf("***********************************\n");
-	printf("*****1.¼Ó·¨             2.¼õ·¨*****\n");
-	printf("*****3.³Ë·¨             4.³ý·¨*****\n");
-	printf("*****         0.ÍË³ö          *****\n");
+	printf("*****1.åŠ æ³•             2.å‡æ³•*****\n");
+	printf("*****3.ä¹˜æ³•             4.é™¤æ³•*****\n");
+	printf("*****         0.é€€å‡º          *****\n");
 	printf("***********************************\n");
 }
 int cle(int (*pa)(int,int))
 {
 	int input, x, y;
-	printf("\nÇëÊäÈëÁ½¸ö²Ù×÷Êý£º>");
+	printf("\nè¯·è¾“å…¥ä¸¤ä¸ªæ“ä½œæ•°ï¼š>");
 	scanf_s("%d%d", &x, &y);
-	printf("\n%d", add(x, y));
+	printf("\n%d", (*pa)(x, y));
 }
-//´«Í³µÄ¼ÆËãÆ÷º¯Êýµ÷ÓÃ ÈßÔÓ
+//ä¼ ç»Ÿçš„è®¡ç®—å™¨å‡½æ•°è°ƒç”¨ å†—æ‚
 int main()
 {
 	int input;
-	do//ÒÅÍüÁË»¹ÓÐ0ÕâÒ»¸öÑ¡Ïî ÏÂ´Î¼ÇµÃ¿¼ÂÇËùÓÐµÄÇé¿ö½øÐÐ¼ÆËã
+	do//é—å¿˜äº†è¿˜æœ‰0è¿™ä¸€ä¸ªé€‰é¡¹ ä¸‹æ¬¡è®°å¾—è€ƒè™‘æ‰€æœ‰çš„æƒ…å†µè¿›è¡Œè®¡ç®—
 	{
 		mune();
-		printf("ÇëÑ¡Ôñ£º>");
+		printf("è¯·é€‰æ‹©ï¼š>");
 		scanf_s("%d", &input);
 		
 		switch (input)
 		{
 		case 0:
-			printf("ÍË³ö\n");
+			printf("é€€å‡º\n");
 		case 1:
 			cle(add);
 		case 2:
@@ -75,7 +75,7 @@ int main()
 		case 4:
 			cle(div);
 		default:
-			printf("Ñ¡Ôñ´íÎó\n");
+			printf("é€‰æ‹©é”™è¯¯\n");
 			break;
 		}
 	} while (input);
